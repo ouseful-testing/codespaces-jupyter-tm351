@@ -4,7 +4,8 @@
   "hostRequirements": {
     //"cpus": 4
   },
-  "waitFor": "onCreateCommand",
+  //"waitFor": "onCreateCommand",
+  "waitFor": "updateContentCommand",
   "updateContentCommand": "python3 -m pip install -r requirements.txt",
   "postCreateCommand": "",
   "customizations": {
