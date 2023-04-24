@@ -26,6 +26,3 @@ jupyterlab-language-pack-zh-CN
 
 # Resource monitoring / tracking
 jupyter-resource-usage
-
-# Proxied applications
-nb-serverproxy-openrefine
