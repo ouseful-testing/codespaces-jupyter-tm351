@@ -3,6 +3,7 @@ jupyterlab-cell-status-extension
 
 # Renderers
 jupyterlab_myst
+jupyterlab-empinken-extension
 jupyterlab-geojson>=3
 
 # Error reporting / Linting
