@@ -64,6 +64,10 @@ The pre-installed `jupyterlab-git` extension allows you to commit and push chang
 
 <img width="1260" alt="image" src="https://user-images.githubusercontent.com/82988/234066314-4c1089ab-a592-403f-b72a-792d3e454ca5.png">
 
+The extension also includes a *diff*er, so you can inspect changes you have made to a file, but not committed:
+
+<img width="1227" alt="image" src="https://user-images.githubusercontent.com/82988/234078676-0656a2df-236e-4002-a9c4-d958ad72d8c0.png">
+
 To upload notebooks, students can download a (controlled) release from the VLE, unzip them, and then drag and drop the notebook directory onto their Github repo page to upload them to the repo. If their Codespace already exists, they should be able to use the git tools to synch the uploaded files into their workspace.
 
 <img width="1009" alt="image" src="https://user-images.githubusercontent.com/82988/234077775-c52e87dc-9a8f-4ff8-b292-9eda211b9a09.png">
