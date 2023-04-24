@@ -1,11 +1,11 @@
 {
-  #"image": "mcr.microsoft.com/devcontainers/universal:2",
+  //"image": "mcr.microsoft.com/devcontainers/universal:2",
   "image": "ouvocl/vce-tm351-jh:22j-b6",
   "hostRequirements": {
     "cpus": 4
   },
   "waitFor": "onCreateCommand",
-  #"updateContentCommand": "python3 -m pip install -r requirements.txt",
+  //"updateContentCommand": "python3 -m pip install -r requirements.txt",
   "postCreateCommand": "",
   "customizations": {
     "codespaces": {
