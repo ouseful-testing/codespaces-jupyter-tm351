@@ -10,8 +10,8 @@ jupyterlab-skip-traceback
 
 # File editing and management
 jupyterlab-git
-#jupytext
-#jupyterlab-filesystem-access
+jupytext
+jupyterlab-filesystem-access
 #jupyter-archive
 
 # Authoring support
@@ -25,4 +25,4 @@ jupyterlab-language-pack-fr-FR
 jupyterlab-language-pack-zh-CN
 
 # Resource monitoring / tracking
-#jupyter-resource-usage
+jupyter-resource-usage
