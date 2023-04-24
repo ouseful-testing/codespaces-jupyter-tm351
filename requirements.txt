@@ -2,8 +2,8 @@ jupyterlab-ou-brand-extension
 jupyterlab-cell-status-extension
 
 # Renderers
-#jupyterlab_myst
-#jupyterlab-geojson>=3
+jupyterlab_myst
+jupyterlab-geojson>=3
 
 # Error reporting / Linting
 jupyterlab-skip-traceback
@@ -11,8 +11,8 @@ jupyterlab-skip-traceback
 # File editing and management
 jupyterlab-git
 #jupytext
-jupyterlab-filesystem-access
-jupyter-archive
+#jupyterlab-filesystem-access
+#jupyter-archive
 
 # Authoring support
 jupyterlab-spellchecker
