@@ -63,3 +63,5 @@ A wide variety of JupyterLab extensions are preinstalled in the environment, inc
 The pre-installed `jupyterlab-git` extension allows you to commit and push changes back to the code repository.
 
 <img width="1260" alt="image" src="https://user-images.githubusercontent.com/82988/234066314-4c1089ab-a592-403f-b72a-792d3e454ca5.png">
+
+To upload notebooks, students can download a (controlled) release from the VLE, unzip them, and then drag and drop the notebook directory onto their Github repo page to upload them to the repo. 
