@@ -15,15 +15,15 @@ The demo is interesting for several reasons:
 - the editing environment is separate from the containerised computational environment. Codespaces can be used to provide install free, customisable, browser based VS Code and JupyterLab environments:
   - the VS Code editor can be customised by installing additional extensions via the `devcontainer.json` file;
   - the JupyterLab editing environment can be customised by installing JuptyerLab extensions via the `requirements.txt` file;
-  - __we can separate concerns of delivering a customised computational environmnt (via the Docker image) and a customised user editing environment (via `.devcontainer` config files in the repo__
+  - __we can separate concerns of delivering a customised computational environmnt (via the Docker image) and a customised user editing environment (via `.devcontainer` config files in the repo)__
 
 - file edits can be persisted in a Github repository using the VS Code and JupyterLab git extensions. (Modified files are persisted in the container and can also be published to a new branch);
   - __provides a natural rationale for getting students into the habit of using version control / git__
   
-- *the JupyterLab environment does supports a local file access extension but this doesn't appear to work in this context at the momnt...*
+- *the JupyterLab environment does supports a local file access extension but this doesn't appear to work in this context at the moment...*
 
-- langauge pack extensions can be added to the JupyterLab environmnt; the current environment includes Frecnch and Chinese language packas, along with English (the default); change language from the JupyterLab `Settings > Language` menu option;
-  - __we can support localisd language packs for forign students, or locally customised labels as required; users can install additional language packs themselves__
+- langauge pack extensions can be added to the JupyterLab environmnt; the current environment includes French and Chinese language packs, along with English (the default); change language from the JupyterLab `Settings > Language` menu option;
+  - __we can support localised language packs for foreign students, or locally customised labels as required; users can install additional language packs themselves__
 
 *The full TM351 environment includes a proxied OpenRefine server, although this seems to knock the Codespace container over. I think this is because OpenRefine is a resource heavy Java application that seems happiest with at least 4GB of memory available.*
 
@@ -38,7 +38,7 @@ To access the environment:
 - create a private repository based on the template;
 - open a new Codespace from your own repository.
 
-__Note that it may take sveral minutes for the containr to be built the first tim you use it or if you deleta the workspace and crat a new one. If you stop a workspace and restart it at a later time, the set-up should be quicker.__
+__Note that it may take several minutes for the containr to be built the first time you use it or if you delete the workspace and create a new one. If you stop a workspace and restart it at a later time, the set-up should be quicker.__
 
 When the Codespace container is built, the JupyterLab UI should be automatically opened in your browser with access to that environment.
 
