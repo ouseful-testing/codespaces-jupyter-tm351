@@ -11,8 +11,9 @@ jupyterlab-skip-traceback
 # File editing and management
 jupyterlab-git
 jupytext
-jupyterlab-filesystem-access
-#jupyter-archive
+# Local fielsystem access not working in Codespace?
+#jupyterlab-filesystem-access
+jupyter-archive
 
 # Authoring support
 jupyterlab-spellchecker
