@@ -2,3 +2,4 @@ jupyterlab-ou-brand-extension
 jupyterlab-cell-status-extension
 nb-serverproxy-openrefine
 jupyterlab_myst
+jupyterlab-git
