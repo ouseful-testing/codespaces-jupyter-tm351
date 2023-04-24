@@ -11,8 +11,10 @@ jupyterlab-skip-traceback
 
 # File editing and management
 jupyterlab-git
+# jupytext option not showing in JupyterLab File menu?
 jupytext
-# Local fielsystem access not working in Codespace?
+
+# Local filesystem access not working in Codespace?
 #jupyterlab-filesystem-access
 jupyter-archive
 
