@@ -17,7 +17,8 @@
       "extensions": [
         "ms-toolsai.jupyter",
         "ms-python.python",
-        "ExecutableBookProject.myst-highlight"
+        "ExecutableBookProject.myst-highlight",
+        "ms-toolsai.datawrangler"
       ]
     }
   }
