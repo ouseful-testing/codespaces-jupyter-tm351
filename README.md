@@ -75,7 +75,7 @@ To upload notebooks, students can download a (controlled) release from the VLE, 
 
 <img width="1009" alt="image" src="https://user-images.githubusercontent.com/82988/234077775-c52e87dc-9a8f-4ff8-b292-9eda211b9a09.png">
 
-## Technical Notes
+## Technical Notes
 
 To customise the JupyterLab environment published by the devcontainer, we install the required JupyterLab extensions from the `requirements.txt` file included in this repo: `"updateContentCommand": "python3 -m pip install -r requirements.txt"`
 
@@ -84,7 +84,7 @@ The original container ([ouvocl/vce-tm351-jh:22j-b8](https://github.com/OpenComp
 The container features first-run as well as on-start procedures:
 
 - *first run*: the first run process includes a [step](https://github.com/OpenComputingLab/vce-jupyter-stacks/blob/main/tm351-notebook-jh/start_jh_extras) to copy the seeded database db files, as shipped within the original container, to a user mounted location in order the persist any changes that are made to the database to a persistent location outside the container (either the user's desktop for the local VCE, or the persistent user storage area in the OU hosted VCE).
-- (*start procedure*](https://github.com/OpenComputingLab/vce-jupyter-stacks/blob/main/tm351-monolith/start): the start procedure performs various seeding checks and calls first run routines as required, and then starts the PostgreSQL and MongoDB services.
+- [*start procedure*](https://github.com/OpenComputingLab/vce-jupyter-stacks/blob/main/tm351-monolith/start): the start procedure performs various seeding checks and calls first run routines as required, and then starts the PostgreSQL and MongoDB services.
 
 In the `devcontainer.json`, we replicate the original container start procedure in the following way:
 
