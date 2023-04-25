@@ -77,12 +77,16 @@ To upload notebooks, students can download a (controlled) release from the VLE, 
 
 <img width="1009" alt="image" src="https://user-images.githubusercontent.com/82988/234077775-c52e87dc-9a8f-4ff8-b292-9eda211b9a09.png">
 
+When using the devcontainer locally by opening the cloned repo directory using VS Code, it seems that the dev containr does not install its own JupyterLab server? However, there is the JupyterLab environment that we built into the original TM351 container, and it seems we can run that by issuing the `jupytr lab` command from the terminal inside a VS Code environment attached to the container:
+
+<img width="776" alt="image" src="https://user-images.githubusercontent.com/82988/234289794-d5b1bf2f-c867-4939-8819-3f87d07f7cd5.png">
+
+
 ### Using the VS Code UI
 
 If we choose to open the Codespace in the browser (which is to say, VS Code in the browser), or in VS Code (which is to say, VS Code running locally), or if we clone the repo and open the directory in a local version of VS Code with the [*Dev Containers* extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) installed, we can run the code cells by selecting the `/usr/bin/python3` environment:
 
 <img width="945" alt="image" src="https://user-images.githubusercontent.com/82988/234274313-1176e6c9-067f-4784-b4e3-0d9e5cfb8b6d.png">
-
 
 ## Technical Notes
 
