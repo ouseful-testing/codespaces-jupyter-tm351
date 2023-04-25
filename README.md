@@ -2,6 +2,7 @@
 
 Demo of running an OU maintained Docker container as the computational environment.
 
+Note that the workspace can be slow to build (watch th logs!) and once the JupyterLab environment has loaded, it may take a little while for the kernel to become available for the first loaded notebook. (Try restarting it after a while, or stopping and closing the notebook, then opning it again, if the kernel does not seem to be responsive).
 ## End-User Rationale
 
 The demo is interesting for several reasons:
@@ -76,6 +77,8 @@ To upload notebooks, students can download a (controlled) release from the VLE, 
 
 ## Technical Notes
 
+To customise the JupyterLab environment published by the devcontainer, we install the required JupyterLab extensions from the `requirements.txt` file included in this repo: `"updateContentCommand": "python3 -m pip install -r requirements.txt"`
+
 The original container ([ouvocl/vce-tm351-jh:22j-b8](https://github.com/OpenComputingLab/vce-jupyter-stacks/tree/main/tm351-monolith)) is single container containing all the required services packages and applications.
 
 The container features first-run as well as on-start procedures:
@@ -83,9 +86,10 @@ The container features first-run as well as on-start procedures:
 - *first run*: the first run process includes a [step](https://github.com/OpenComputingLab/vce-jupyter-stacks/blob/main/tm351-notebook-jh/start_jh_extras) to copy the seeded database db files, as shipped within the original container, to a user mounted location in order the persist any changes that are made to the database to a persistent location outside the container (either the user's desktop for the local VCE, or the persistent user storage area in the OU hosted VCE).
 - (*start procedure*](https://github.com/OpenComputingLab/vce-jupyter-stacks/blob/main/tm351-monolith/start): the start procedure performs various seeding checks and calls first run routines as required, and then starts the PostgreSQL and MongoDB services.
 
-In the `devcontainer.json`, we replicate the original container strat procedure in the following way:
+In the `devcontainer.json`, we replicate the original container start procedure in the following way:
 
 - first run: `"postCreateCommand": "sudo /var/startup/start_jh_extras"`
 - on start: `"postStartCommand": "sudo service postgresql restart && sudo mongod --fork --logpath /dev/stdout --dbpath ${MONGO_DB_PATH}"`
 
-To customise the JupyterLab environment published by the devcontainer, we installed the required JupyterLab extensions from the `requirements.txt` file included in this repo: `"updateContentCommand": "python3 -m pip install -r requirements.txt"`
+We hold the launch of the UI until the environment has been properly seeded and the `postStartCommand` has started the database services.
+
