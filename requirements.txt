@@ -21,7 +21,7 @@ jupyter-archive
 # Authoring support
 jupyterlab-spellchecker
 
-# Teaching Environment Utilties
+# Teaching Environment Utilities
 stickyland
 
 # Language packs
@@ -31,5 +31,5 @@ jupyterlab-language-pack-zh-CN
 # Resource monitoring / tracking
 jupyter-resource-usage
 
-# For use supporting data wranlger - https://github.com/dilshod/xlsx2csv
+# For use supporting data wrangler - https://github.com/dilshod/xlsx2csv
 xlsx2csv
