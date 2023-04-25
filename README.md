@@ -30,6 +30,8 @@ The demo is interesting for several reasons:
 
 *The full TM351 environment includes a proxied OpenRefine server, although this seems to knock the Codespace container over. I think this is because OpenRefine is a resource heavy Java application that seems happiest with at least 4GB of memory available.*
 
+### Using the JupyterLab UI
+
 We can specify the default Codespaces editor to be JuptyerLab from the Github user settings page:
 
 <img width="789" alt="image" src="https://user-images.githubusercontent.com/82988/234049241-d4f12077-1c36-4495-977f-f5f95a0dcc57.png">
@@ -74,6 +76,13 @@ The extension also includes a *diff*er, so you can inspect changes you have made
 To upload notebooks, students can download a (controlled) release from the VLE, unzip them, and then drag and drop the notebook directory onto their Github repo page to upload them to the repo. If their Codespace already exists, they should be able to use the git tools to synch the uploaded files into their workspace.
 
 <img width="1009" alt="image" src="https://user-images.githubusercontent.com/82988/234077775-c52e87dc-9a8f-4ff8-b292-9eda211b9a09.png">
+
+### Using the VS Code UI
+
+If we choose to open the Codespace in the browser (which is to say, VS Code in the browser), or in VS Code (which is to say, VS Code running locally), or if we clone the repo and open the directory in a local version of VS Code with the [*Dev Containers* extension](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) installed, we can run the code cells by selecting the `/usr/bin/python3` environment:
+
+<img width="945" alt="image" src="https://user-images.githubusercontent.com/82988/234274313-1176e6c9-067f-4784-b4e3-0d9e5cfb8b6d.png">
+
 
 ## Technical Notes
 
