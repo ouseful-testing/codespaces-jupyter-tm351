@@ -30,3 +30,6 @@ jupyterlab-language-pack-zh-CN
 
 # Resource monitoring / tracking
 jupyter-resource-usage
+
+# For use supporting data wranlger - https://github.com/dilshod/xlsx2csv
+xlsx2csv
