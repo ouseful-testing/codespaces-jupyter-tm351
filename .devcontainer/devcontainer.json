@@ -1,13 +1,14 @@
 {
   //"image": "mcr.microsoft.com/devcontainers/universal:2",
-  "image": "ouvocl/vce-tm351-jh:22j-b6",
+  "image": "ouvocl/vce-tm351-jh:22j-b8",
   "hostRequirements": {
     //"cpus": 4
   },
   //"waitFor": "onCreateCommand",
   "waitFor": "updateContentCommand",
   "updateContentCommand": "python3 -m pip install -r requirements.txt",
-  "postCreateCommand": "",
+  "postCreateCommand": "sudo /var/startup/start_jh_extras",
+  "postStartCommand": "sudo service postgresql restart && sudo mongod --fork --logpath /dev/stdout --dbpath ${MONGO_DB_PATH}",
   "customizations": {
     "codespaces": {
       "openFiles": []

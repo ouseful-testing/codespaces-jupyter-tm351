@@ -2,6 +2,8 @@
 
 Demo of running an OU maintained Docker container as the computational environment.
 
+## End-User Rationale
+
 The demo is interesting for several reasons:
 
 - a custom container can be provided that defines a complex computational environment for use in the Codespace. In the current example, the container is a container used in the Open University module *TM351 Data Management and Analysis*. This environment includes:
@@ -10,19 +12,19 @@ The demo is interesting for several reasons:
   - __we can deliver a complex computational environment to students that we can update as required by updating the original Docker image__
   
 - Codespaces provide a generous amount of free hosted compute hours per month, meaning an install free user experience;
-  - __students can use the Codespaces environment for free withouy any hosting burden on, or costs to, the OU__
+  - __students can use the Codespaces environment for free without any hosting burden on, or costs to, the OU__
 
 - the editing environment is separate from the containerised computational environment. Codespaces can be used to provide install free, customisable, browser based VS Code and JupyterLab environments:
   - the VS Code editor can be customised by installing additional extensions via the `devcontainer.json` file;
   - the JupyterLab editing environment can be customised by installing JuptyerLab extensions via the `requirements.txt` file;
-  - __we can separate concerns of delivering a customised computational environmnt (via the Docker image) and a customised user editing environment (via `.devcontainer` config files in the repo)__
+  - __we can separate concerns of delivering a customised computational environment (via the Docker image) and a customised user editing environment (via `.devcontainer` config files in the repo)__
 
 - file edits can be persisted in a Github repository using the VS Code and JupyterLab git extensions. (Modified files are persisted in the container and can also be published to a new branch);
   - __provides a natural rationale for getting students into the habit of using version control / git__
   
 - *the JupyterLab environment does supports a local file access extension but this doesn't appear to work in this context at the moment...*
 
-- langauge pack extensions can be added to the JupyterLab environmnt; the current environment includes French and Chinese language packs, along with English (the default); change language from the JupyterLab `Settings > Language` menu option;
+- language pack extensions can be added to the JupyterLab environment; the current environment includes French and Chinese language packs, along with English (the default); change language from the JupyterLab `Settings > Language` menu option;
   - __we can support localised language packs for foreign students, or locally customised labels as required; users can install additional language packs themselves__
 
 *The full TM351 environment includes a proxied OpenRefine server, although this seems to knock the Codespace container over. I think this is because OpenRefine is a resource heavy Java application that seems happiest with at least 4GB of memory available.*
@@ -38,7 +40,7 @@ To access the environment:
 - create a private repository based on the template;
 - open a new Codespace from your own repository.
 
-__Note that it may take several minutes for the containr to be built the first time you use it or if you delete the workspace and create a new one. If you stop a workspace and restart it at a later time, the set-up should be quicker.__
+__Note that it may take several minutes for the container to be built the first time you use it or if you delete the workspace and create a new one. If you stop a workspace and restart it at a later time, the set-up should be quicker.__
 
 When the Codespace container is built, the JupyterLab UI should be automatically opened in your browser with access to that environment.
 
@@ -72,3 +74,18 @@ To upload notebooks, students can download a (controlled) release from the VLE, 
 
 <img width="1009" alt="image" src="https://user-images.githubusercontent.com/82988/234077775-c52e87dc-9a8f-4ff8-b292-9eda211b9a09.png">
 
+## Technical Notes
+
+The original container ([ouvocl/vce-tm351-jh:22j-b8](https://github.com/OpenComputingLab/vce-jupyter-stacks/tree/main/tm351-monolith)) is single container containing all the required services packages and applications.
+
+The container features first-run as well as on-start procedures:
+
+- *first run*: the first run process includes a [step](https://github.com/OpenComputingLab/vce-jupyter-stacks/blob/main/tm351-notebook-jh/start_jh_extras) to copy the seeded database db files, as shipped within the original container, to a user mounted location in order the persist any changes that are made to the database to a persistent location outside the container (either the user's desktop for the local VCE, or the persistent user storage area in the OU hosted VCE).
+- (*start procedure*](https://github.com/OpenComputingLab/vce-jupyter-stacks/blob/main/tm351-monolith/start): the start procedure performs various seeding checks and calls first run routines as required, and then starts the PostgreSQL and MongoDB services.
+
+In the `devcontainer.json`, we replicate the original container strat procedure in the following way:
+
+- first run: `"postCreateCommand": "sudo /var/startup/start_jh_extras"`
+- on start: `"postStartCommand": "sudo service postgresql restart && sudo mongod --fork --logpath /dev/stdout --dbpath ${MONGO_DB_PATH}"`
+
+To customise the JupyterLab environment published by the devcontainer, we installed the required JupyterLab extensions from the `requirements.txt` file included in this repo: `"updateContentCommand": "python3 -m pip install -r requirements.txt"`
