@@ -18,7 +18,7 @@
         // On Mac Arm64, there's a long delay on the contianer build
         // https://github.com/microsoft/vscode/issues/179827
         "extensions.verifySignature": false
-      }
+      },
       "extensions": [
         "ms-toolsai.jupyter",
         "ms-python.python",
