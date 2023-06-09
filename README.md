@@ -41,10 +41,12 @@ We can specify the default Codespaces editor to be JuptyerLab from the Github us
 
 To access the environment:
 
+<img width="1047" alt="image" src="https://github.com/ouseful-testing/codespaces-jupyter-tm351/assets/82988/98470329-79bb-4e3e-b6a0-dd9b5b0c9efa">
+
 - create a Github account;
-- click on "Use this template*;
+- click on *Use this template*;
 - create a private repository based on the template;
-- open a new Codespace from your own repository.
+- open a new Codespace from your own repository (see above for how to ensure that JupyterLab is the default launch UI).
 
 __Note that it may take several minutes for the container to be built the first time you use it or if you delete the workspace and create a new one. If you stop a workspace and restart it at a later time, the set-up should be quicker.__
 
