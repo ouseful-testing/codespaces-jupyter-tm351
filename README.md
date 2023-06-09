@@ -4,7 +4,7 @@ Demo of running an OU maintained Docker container as the computational environme
 
 Note that the workspace can be slow to build (watch the logs!) and once the JupyterLab environment has loaded, it may take a little while for the kernel to become available for the first loaded notebook. (Try restarting it after a while, or stopping and closing the notebook, then opning it again, if the kernel does not seem to be responsive).
 
-*I've also noticed JupytrLab somtims gets a bit stuck; hard refreshing the browser with dvtools open to clear the cache generally fixes it...*
+*I've also noticed JupyterLab somtimes gets a bit stuck; hard refreshing the browser with devtools open to clear the cache generally fixes it...*
 
 ## End-User Rationale
 
