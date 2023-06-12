@@ -100,7 +100,7 @@ If we choose to open the Codespace in the browser (which is to say, VS Code in t
 
 To customise the JupyterLab environment published by the devcontainer, we install the required JupyterLab extensions from the `requirements.txt` file included in this repo: `"updateContentCommand": "python3 -m pip install -r requirements.txt"`
 
-The original container ([ouvocl/vce-tm351-jh:22j-b8](https://github.com/OpenComputingLab/vce-jupyter-stacks/tree/main/tm351-monolith)) is single container containing all the required services packages and applications.
+The container used in the demo [`mmh352/tm351:23j.0b8`](https://hub.docker.com/r/mmh352/tm351/tags) is a standalone container that includea all the required services packages and applications.
 
 The container features first-run as well as on-start procedures:
 
