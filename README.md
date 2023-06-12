@@ -114,3 +114,5 @@ In the `devcontainer.json`, we replicate the original container start procedure 
 
 We hold the launch of the UI until the environment has been properly seeded and the `postStartCommand` has started the database services.
 
+__Updates to the PostgreSQL and MongoDB databases are not persisted outsude the container.__
+
