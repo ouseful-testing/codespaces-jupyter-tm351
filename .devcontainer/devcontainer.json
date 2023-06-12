@@ -1,6 +1,6 @@
 {
   //"image": "mcr.microsoft.com/devcontainers/universal:2",
-  "image": "mmh352/tm351:23j.0b3", //"ouvocl/vce-tm351-jh:22j-b8",
+  "image": "mmh352/tm351:23j.0b8", //"ouvocl/vce-tm351-jh:22j-b8",
   "hostRequirements": {
     //"cpus": 4
   },
