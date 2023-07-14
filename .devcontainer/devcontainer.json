@@ -1,21 +1,28 @@
 {
   //"image": "mcr.microsoft.com/devcontainers/universal:2",
-  "image":  "outm351dev/tm351-23jl4",//"mmh352/tm351:23j.0b8", //"ouvocl/vce-tm351-jh:22j-b8",
+  "image": "outm351dev/tm351-23jl4", //"mmh352/tm351:23j.0b8", //"ouvocl/vce-tm351-jh:22j-b8",
   "hostRequirements": {
     //"cpus": 4
   },
-  //"waitFor": "onCreateCommand",
+
+  // Useful docs:
+  // https://containers.dev/implementors/json_reference/#general-properties
+  // https://containers.dev/implementors/json_reference/#_lifecycle-scripts
+
   "waitFor": "postStartCommand",
+  //"waitFor": "onCreateCommand",
+  // For development, it may be useful to be root when connecting via terminal
+  //"remoteUser": "root",
   "updateContentCommand": "", //"python3 -m pip install -r requirements.txt",
-  //"postCreateCommand": "sudo /var/startup/start_jh_extras",
-  "postStartCommand": "sudo /usr/sbin/service postgresql restart && sudo /usr/sbin/service mongod restart",
+  "postCreateCommand": "",
+  "postStartCommand": "sudo service postgresql restart && sudo service mongod restart",
   "customizations": {
     "codespaces": {
       "openFiles": []
     },
     "vscode": {
       "settings": {
-        // On Mac Arm64, there's a long delay on the contianer build
+        // On Mac Arm64, there's a long delay on the container build
         // https://github.com/microsoft/vscode/issues/179827
         "extensions.verifySignature": false
       },
