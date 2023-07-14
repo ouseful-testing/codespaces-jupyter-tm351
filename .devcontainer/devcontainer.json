@@ -8,7 +8,7 @@
   "waitFor": "postStartCommand",
   "updateContentCommand": "", //"python3 -m pip install -r requirements.txt",
   //"postCreateCommand": "sudo /var/startup/start_jh_extras",
-  "postStartCommand": "sudo service postgresql restart && sudo service mongod restart",
+  "postStartCommand": "sudo /usr/sbin/service postgresql restart && sudo /usr/sbin/service mongod restart",
   "customizations": {
     "codespaces": {
       "openFiles": []
