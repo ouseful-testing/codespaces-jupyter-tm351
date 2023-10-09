@@ -6,6 +6,8 @@ Note that the workspace can be slow to build (watch the logs!) and once the Jupy
 
 *I've also noticed JupyterLab somtimes gets a bit stuck; hard refreshing the browser with devtools open to clear the cache generally fixes it...*
 
+Try it here: https://github.com/codespaces/new/ouseful-testing/codespaces-jupyter-tm351?editor=jupyter
+
 ## End-User Rationale
 
 The demo is interesting for several reasons:
