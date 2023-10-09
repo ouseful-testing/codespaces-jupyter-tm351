@@ -13,7 +13,7 @@
   //"waitFor": "onCreateCommand",
   // For development, it may be useful to be root when connecting via terminal
   //"remoteUser": "root",
-  "updateContentCommand": "", //"python3 -m pip install -r requirements.txt",
+  "updateContentCommand": "python3 -m pip install -r requirements.txt"", //"python3 -m pip install -r requirements.txt",
   "postCreateCommand": "",
   "postStartCommand": "sudo service postgresql restart && sudo service mongod restart",
   "customizations": {
