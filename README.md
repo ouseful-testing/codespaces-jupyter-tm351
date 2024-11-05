@@ -4,9 +4,19 @@ Demo of running an OU maintained Docker container as the computational environme
 
 Note that the workspace can be slow to build (watch the logs!) and once the JupyterLab environment has loaded, it may take a little while for the kernel to become available for the first loaded notebook. (Try restarting it after a while, or stopping and closing the notebook, then opning it again, if the kernel does not seem to be responsive).
 
-*I've also noticed JupyterLab somtimes gets a bit stuck; hard refreshing the browser with devtools open to clear the cache generally fixes it...*
+*I've also noticed JupyterLab sometimes gets a bit stuck; hard refreshing the browser with devtools open to clear the cache generally fixes it...*
 
 Try it here: https://github.com/codespaces/new/ouseful-testing/codespaces-jupyter-tm351?editor=jupyter
+
+## Running OpenRefine
+
+OpenRefine can also be run via the devcontainer:
+
+- using the VSCode UI on the running devcontainer:
+  - open a new terminal
+  - run the command: `/var/openrefine/refine -i '127.0.0.1' -p '3338' -d '/home/ou/TM351-24J/openrefine' -H '*'`
+  - in the `PORTS` tab, click `ADD PORT` and enter `3338`
+  - hover over the forwarded port link and click the globe icon from the pop-up toolbar; your browser should open a new tab and you should be able to see OpenRefine running there.
 
 ## End-User Rationale
 
